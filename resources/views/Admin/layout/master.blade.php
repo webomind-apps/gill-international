@@ -11,14 +11,14 @@
     <title>Gill International Travel</title>
 
     <!-- Custom fonts for this template-->
-    <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('Admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="{{ asset('admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('admin/css/theme.css') }}" rel="stylesheet">
+    <link href="{{ asset('Admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('Admin/css/theme.css') }}" rel="stylesheet">
 
 
 </head>
@@ -28,7 +28,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        @include('admin.layout.sidebar')
+        @include('Admin.layout.sidebar')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -38,7 +38,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                @include('admin.layout.top-nav')
+                @include('Admin.layout.top-nav')
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
@@ -53,7 +53,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            @include('admin.layout.footer')
+            @include('Admin.layout.footer')
             <!-- End of Footer -->
 
         </div>
@@ -70,21 +70,21 @@
 
 
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('Admin/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('Admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="{{ asset('admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('Admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="{{ asset('admin/js/sb-admin-2.min.js') }}"></script>
+    <script src="{{ asset('Admin/js/sb-admin-2.min.js') }}"></script>
 
     <!-- Page level plugins -->
-    <script src="{{ asset('admin/vendor/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('Admin/vendor/chart.js/Chart.min.js') }}"></script>
 
     <!-- Page level custom scripts -->
-    <script src="{{ asset('admin/js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('admin/js/demo/chart-pie-demo.js') }}"></script>
+    <script src="{{ asset('Admin/js/demo/chart-area-demo.js') }}"></script>
+    <script src="{{ asset('Admin/js/demo/chart-pie-demo.js') }}"></script>
 
     {{-- bootstrap --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -99,11 +99,11 @@
 
     <script>
         // function loadTinymce() {
-            tinymce.init({
-                selector: '#header_description,#premium_description,#popular_description,#luxury_description,#river_cruises_description,#description',
-                plugins: 'code',
-                valid_elements: '*[*]',
-            });
+        tinymce.init({
+            selector: '#header_description,#premium_description,#popular_description,#luxury_description,#river_cruises_description,#description,#destination_wedding_description,#destination_wedding_form_description,#destination_wedding_plan_description,#about_description,#gift_registry_description,#easy_registration_description,#buying_process_description,#gift_card_description,#advantage_description,#guest_description',
+            plugins: 'code',
+            valid_elements: '*[*]',
+        });
         // }
     </script>
 

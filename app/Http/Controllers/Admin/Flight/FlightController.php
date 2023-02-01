@@ -113,6 +113,6 @@ class FlightController extends Controller
      */
     public function destroy($id)
     {
-        //
+     
     }
 }

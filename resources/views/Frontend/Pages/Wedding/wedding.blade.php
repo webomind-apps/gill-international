@@ -1,12 +1,22 @@
-@extends('frontend.layout.master')
+@extends('Frontend.layout.master')
+
+@section('title')
+    <title>{{ $wedding->meta_title }}</title>
+@endsection
+@section('meta_description')
+    <meta name="meta_description" content="{{ $wedding->meta_description }}">
+@endsection
+@section('meta_keywords')
+    <meta name="meta_keywords" content="{{ $wedding->meta_keywords }}">
+@endsection
 
 @section('page-contents')
     <section class="breadcrum"
-        style="background-image: url({{asset('Frontend/img/wedding/wedding-banner-1.png')}}); background-position: top center; ">
+        style="background-image: url({{ asset("storage/$wedding->banner") }}); background-position: top center; ">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-                    <h1>Destination Wedding</h1>
+                    <h1>{{ $wedding->title }}</h1>
                 </div>
             </div>
         </div>
@@ -17,32 +27,23 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 ">
                     <div class="wedding-cont">
-                        <h3 class="mb-4">Destination Wedding</h3>
-
+                        <h3 class="mb-4">{{ $wedding->destination_wedding_title }}</h3>
                         <p>
-                            Making your Dream Destination Wedding a Reality
-                            Whether it’s a beautiful beach wedding or a ceremony overseas, Gill Travel is the agency you
-                            want to help book your perfect destination wedding! Your fantasies of a destination wedding
-                            can come true with the assistance of a Gill Travel consultant. Our experts can match you
-                            with the location, resort, or cruise that best suits your preferences and budget.
-                            Additionally, we can accommodate groups of any size and make any special accommodations as
-                            requested. So you may unwind and delight in a party that surpasses your expectations and is
-                            entirely personalized. Below, you can start looking into your alternatives for the ideal
-                            destination wedding.
-
+                            {!! $wedding->destination_wedding_description !!}
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="wedding-img">
-                        <img src="./assets/img/wedding/noah-hinton-199405.jpg" class="img-fluid rounded" alt="">
+                        <img src="{{ asset("storage/$wedding->destination_wedding_image") }}" class="img-fluid rounded"
+                            alt="">
                     </div>
                 </div>
             </div>
             <div class="row mt-5">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="wedding-img">
-                        <img src="./assets/img/wedding/24657307602_4a5fc396f0_k.jpg" class="img-fluid rounded"
+                        <img src="{{ asset("storage/$wedding->destination_wedding_form_image") }}" class="img-fluid rounded"
                             alt="">
                     </div>
                 </div>
@@ -50,18 +51,9 @@
                     <div class="wedding-cont" style="text-align: left;">
                         <div class="row">
                             <div class="col-lg-10 col-md-10 col-sm-12">
-                                <h3 class="mb-4">Destination Wedding Request Form</h3>
-
+                                <h3 class="mb-4">{{ $wedding->destination_wedding_form_title }}</h3>
                                 <p>
-                                    You may rely on our destination wedding experts to assist you in organizing the
-                                    perfect
-                                    wedding overseas. You guarantee your favourite date and location, make sure to book
-                                    early!
-                                </p>
-                                <p>
-                                    Fill out the fields and check the boxes below to start the process. Once you’re
-                                    done, click
-                                    Request and Gill Travel will reach out to you!
+                                    {!! $wedding->destination_wedding_form_description !!}
                                 </p>
                             </div>
                         </div>
@@ -78,27 +70,16 @@
             <div class="row">
                 <div class="col-lg-12 content">
                     <div class="row">
-
                         <div class="col-lg-5 col-md-12 col-sm-12">
-                            <img src="./assets/img/cruise/cruise.svg" class="img-fluid" alt="">
+                            <img src="{{ asset("storage/$wedding->destination_wedding_plan_image") }}" class="img-fluid"
+                                alt="">
                         </div>
                         <div class="col-lg-7 col-md-12 col-sm-12 content-heading my-auto">
-                            <h1 class="planning-title"> Planning for a <span>Destination Wedding</span></h1>
-
+                            <h1 class="planning-title"> {{ $wedding->destination_wedding_plan_title }}</span></h1>
                             <p>
-                                You've been trying to plan this day for a long time, and you want everything to go
-                                according
-                                to schedule, right? You can unwind knowing that every little detail is being taken care
-                                of
-                                with the help of our Gill Travel destination wedding consultants' skilled advice and
-                                assistance. We handle the details so you can concentrate on enjoying the festivities
-                                with
-                                close family and friends at the location of your choice and the ceremony type that best
-                                suits your preferences. A destination wedding expert from Gill Travel is where lifelong
-                                memories start.
+                                {!! $wedding->destination_wedding_plan_description !!}
                             </p>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -121,15 +102,13 @@
                     </p>
                 </div>
 
-
-
                 <div class="col-lg-9 col-md-12 mx-auto ptb col-sm-12">
                     <div class="main-timeline">
                         <div class="timeline">
                             <div class="timeline-content">
                                 <div class="circle">
                                     <span class="homebox">
-                                        <img src="./assets/img/wedding/wedding-consiltant.jfif" class="img">
+                                        <img src="{{asset('frontend/img/wedding/wedding-consiltant.jfif')}}" class="img">
                                     </span>
                                 </div>
                                 <div class="content">
@@ -141,7 +120,7 @@
                         </div>
                         <div class="timeline">
                             <div class="timeline-content">
-                                <div class="circle"><span class="homebox"><img src="./assets/img/wedding/theme.jfif"
+                                <div class="circle"><span class="homebox"><img src="{{asset('frontend/img/wedding/theme.jfif')}}"
                                             class="img" /></span></div>
                                 <div class="content">
                                     <span class="year">Step 2</span>
@@ -153,7 +132,7 @@
                         <div class="timeline">
                             <div class="timeline-content">
                                 <div class="circle"><span class="homebox"><img
-                                            src="./assets/img/wedding/Pickdestination.jfif" class="img"></span></div>
+                                            src="{{asset('frontend/img/wedding/Pickdestination.jfif')}}" class="img"></span></div>
                                 <div class="content">
                                     <span class="year">Step 3</span>
                                     <h3 class="title h4"> Pick your Destination, Travel and Hotel </h3>
@@ -163,7 +142,7 @@
                         </div>
                         <div class="timeline">
                             <div class="timeline-content">
-                                <div class="circle"><span class="homebox"><img src="./assets/img/wedding/weddingDate.jfif"
+                                <div class="circle"><span class="homebox"><img src="{{asset('frontend/img/wedding/weddingDate.jfif')}}"
                                             class="img"></span></div>
                                 <div class="content">
                                     <span class="year">Step 4</span>
@@ -176,7 +155,7 @@
                         <div class="timeline">
                             <div class="timeline-content">
                                 <div class="circle"><span class="homebox"><img
-                                            src="./assets/img/wedding/Legal-Requirements.png" class="img"></span></div>
+                                            src="{{asset('frontend/img/wedding/Legal-Requirements.png')}}" class="img"></span></div>
                                 <div class="content">
                                     <span class="year">Step 5</span>
                                     <h3 class="title 4">Get the Destination’s Legal Requirements</h3>
@@ -187,8 +166,8 @@
                         </div>
                         <div class="timeline">
                             <div class="timeline-content">
-                                <div class="circle"><span class="homebox"><img src="./assets/img/wedding/Reservation.jfif"
-                                            class="img"></span></div>
+                                <div class="circle"><span class="homebox"><img
+                                            src="{{asset('frontend/img/wedding/Reservation.jfif')}}" class="img"></span></div>
                                 <div class="content">
                                     <span class="year">Step 6</span>
                                     <h3 class="title h4">Complete your Reservation !</h3>
@@ -204,16 +183,12 @@
         </div>
     </section>
 
-    <section class="planning-bg" style="background-image: url(./assets/img/wedding/Planning-bg.jpg);">
+    <section class="planning-bg" style="background-image: url({{ asset("storage/$wedding->about_image") }});">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto col-md-12 col-sm-12">
                     <p>
-                        Through the entire process your chosen Gill Travel professional will provide you with all
-                        details and aid you with any issues, questions or concerns you may have. All of the significant
-                        arrangements, including travel and lodging as well as the wedding day, are handled by our
-                        wedding professionals. Additionally, we provide the greatest amount of flexibility to enable you
-                        to personalize your wedding and make it genuinely unique and unforgettable.
+                        {!! $wedding->about_description !!}
                     </p>
                 </div>
             </div>
@@ -226,26 +201,56 @@
             <div class="row justify-content-center">
                 <div class="col-lg-5 col-md-6 col-sm-12 ">
                     <div class="wedding-cont">
-                        <h3 class="mb-4">Gift Registry</h3>
-
+                        <h3 class="mb-4">{{ $wedding->gift_registry_title }}</h3>
                         <p>
-                            Your loved ones, friends, and visitors are honored to be present on your special day. It's
-                            simple for them to show their appreciation and send you well wishes with our Gift Registry.
-                            Use them as a cost-saving measure for your destination wedding or honeymoon, or to extend
-                            your stay in paradise!
+                            {!! $wedding->gift_registry_description !!}
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">
                     <div class="wedding-img">
-                        <img src="./assets/img/wedding/noah-hinton-199405.jpg" class="img-fluid rounded" alt="">
+                        <img src="{{ asset("storage/$wedding->gift_registry_image") }}" class="img-fluid rounded" alt="">
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center mt-5">
                 <div class="col-lg-5 col-md-6 col-sm-12">
                     <div class="wedding-img">
-                        <img src="./assets/img/wedding/24657307602_4a5fc396f0_k.jpg" class="img-fluid rounded"
+                        <img src="{{ asset("storage/$wedding->easy_registration_image") }}" class="img-fluid rounded" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <div class="wedding-cont" style="text-align: left;">
+                        <div class="row">
+                            <div class="col-lg-10 col-md-10 col-sm-12">
+                                <h3 class="mb-4">{{ $wedding->easy_registration_title }}</h3>
+                                <p>
+                                    {!! $wedding->easy_registration_description !!}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-5 col-md-6 col-sm-12 ">
+                    <div class="wedding-cont">
+                        <h3 class="mb-4">{{$wedding->buying_process_title}}</h3>
+                        <p>
+                            {!!$wedding->buying_process_description!!}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <div class="wedding-img">
+                        <img src="{{asset("storage/$wedding->buying_process_image")}}" class="img-fluid rounded" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <div class="wedding-img">
+                        <img src="{{asset("storage/$wedding->gift_card_image")}}" class="img-fluid rounded"
                             alt="">
                     </div>
                 </div>
@@ -253,78 +258,27 @@
                     <div class="wedding-cont" style="text-align: left;">
                         <div class="row">
                             <div class="col-lg-10 col-md-10 col-sm-12">
-                                <h3 class="mb-4">Easy Registration</h3>
-
+                                <h3 class="mb-4">{{$wedding->gift_card_title}} </h3>
                                 <p>
-                                    When you send out your wedding invites and Save the Date cards, be sure to inform
-                                    your guests that you have registered your destination wedding or honeymoon with your
-                                    Gill Travel professional.
-
+                                    {!!$wedding->gift_card_description!!}
                                 </p>
-
                             </div>
                         </div>
-
                     </div>
                 </div>
-
             </div>
             <div class="row justify-content-center mt-5">
                 <div class="col-lg-5 col-md-6 col-sm-12 ">
                     <div class="wedding-cont">
-                        <h3 class="mb-4">Simple Buying Process</h3>
+                        <h3 class="mb-4">{{$wedding->guest_title}}</h3>
                         <p>
-                            Your visitors can visit their local Gill Travel to purchase Gill Travel Gift Cards in any
-                            amount
+                           {!!$wedding->guest_description!!}
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">
                     <div class="wedding-img">
-                        <img src="./assets/img/wedding/noah-hinton-199405.jpg" class="img-fluid rounded" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center mt-5">
-                <div class="col-lg-5 col-md-6 col-sm-12">
-                    <div class="wedding-img">
-                        <img src="./assets/img/wedding/24657307602_4a5fc396f0_k.jpg" class="img-fluid rounded"
-                            alt="">
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-6 col-sm-12">
-                    <div class="wedding-cont" style="text-align: left;">
-                        <div class="row">
-                            <div class="col-lg-10 col-md-10 col-sm-12">
-                                <h3 class="mb-4">Applying Gift Cards to your Trip </h3>
-
-                                <p>
-                                    To apply your gift cards toward the price of your destination wedding or honeymoon,
-                                    speak with a Gill Travel professional!
-
-                                </p>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="row justify-content-center mt-5">
-                <div class="col-lg-5 col-md-6 col-sm-12 ">
-                    <div class="wedding-cont">
-                        <h3 class="mb-4">Let your Guests Know !</h3>
-                        <p>
-                            To let guests know you're registered, ask your Gill Travel professional for Honeymoon Gift
-                            Registry Notices to add in your pre-wedding mailings. Excellent for relatives and
-                            acquaintances in different provinces!
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-6 col-sm-12">
-                    <div class="wedding-img">
-                        <img src="./assets/img/wedding/noah-hinton-199405.jpg" class="img-fluid rounded" alt="">
+                        <img src="{{asset("storage/$wedding->guest_image")}}" class="img-fluid rounded" alt="">
                     </div>
                 </div>
             </div>
@@ -335,35 +289,20 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-5 px-0">
-                    <img src="./assets/img/cruise/h3-img-8 1.png" class="img-fluid" alt="">
+                    <img src="{{asset("storage/$wedding->advantage_image")}}" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-7">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="planning-cont">
-                                <h3 class="mt-4">The Upside of : <span> Destination Weddings</span> </h3>
+                                <h3 class="mt-4">{{$wedding->advantage_title}}</span> </h3>
                                 <p>
-                                    For a multitude of reasons, destination weddings are an excellent choice for many
-                                    couples. To some, the financial savings over a traditional wedding are appealing; to
-                                    others, it appears natural because many of their relatives will be travelling to
-                                    attend the wedding anyway; to others, it can be a fantastic option if they do not
-                                    have a large number of guests who will attend; and to still others, it may simply be
-                                    a desire to break with tradition. Whatever the case may be, a destination wedding
-                                    may be the ideal way to say "I do!”.
-                                </p>
-                                <p>
-                                    Destination weddings were traditionally assumed to be island or tropical gatherings.
-                                    A destination wedding, on the other hand, simply indicates that you are getting
-                                    married away from home. The location you select might be a town or city where your
-                                    family or ancestors formerly lived, a location you have always longed to visit, or a
-                                    location that appears to be perfectly suited to your big day. The options are
-                                    limitless.
+                                    {!!$wedding->advantage_description!!}
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>

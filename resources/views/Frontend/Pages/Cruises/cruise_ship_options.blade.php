@@ -1,4 +1,4 @@
-@extends('frontend.layout.master')
+@extends('Frontend.layout.master')
 
 @section('title')
     <title>{{ $cruise_ship_options->meta_title }}</title>

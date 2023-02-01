@@ -1,4 +1,4 @@
-@extends('frontend.layout.master')
+@extends('Frontend.layout.master')
 
 @section('page-contents')
     {{-- <section class="breadcrum" style="background-image: url(./assets/img/cruise/Cruise\ Ports\ banner.png); "> --}}

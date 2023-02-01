@@ -57,7 +57,7 @@
                     <a href="{{ route('vacation') }}">Vacation</a>
                 </li>
                 <li class="underline">
-                    <a href="group.html">Group</a>
+                    <a href="{{route('group-vacation')}}">Group Travel</a>
                 </li>
                 <li class="underline">
                     <a href="{{ route('disney') }}">Disney</a>
@@ -70,7 +70,7 @@
                     <a href="#!">Travel Booking</a>
                 </li>
                 <li class="underline">
-                    <a href="#!">Contact Us</a>
+                    <a href="{{ route('contact-us-page') }}">Contact Us</a>
                 </li>
                 <li>
                     <select name="" id="">
@@ -86,3 +86,5 @@
         </nav>
     </div>
 </section>
+
+

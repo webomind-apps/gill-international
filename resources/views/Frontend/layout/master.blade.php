@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     @yield('title')
     @yield('meta_description')
     @yield('meta_keywords')
@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
 
 </head>
 
@@ -37,7 +38,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" crossorigin="anonymous"
         referrerpolicy="no-referrer"></script>
     {{-- <script src="./assets/js/owl.carousel.min.js"></script> --}}
-    <script src="{{asset('Frontend/js/owl.carousel.min.js')}}"></script>
+    <script src="{{ asset('Frontend/js/owl.carousel.min.js') }}"></script>
 
     <script>
         (function($) {
@@ -146,6 +147,14 @@
             let navigation = document.querySelector('.navigation');
             navigation.classList.toggle('sticky', window.scrollY > 0);
         });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $(".alert").fadeTo(2000, 500).slideUp(500, function() {
+                $(".alert").slideUp(400);
+            });
+        })
     </script>
 </body>
 

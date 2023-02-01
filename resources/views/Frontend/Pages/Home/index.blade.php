@@ -1,4 +1,4 @@
-@extends('frontend.layout.master')
+@extends('Frontend.layout.master')
 
 @section('page-contents')
     <section class="main-banner" style="background-image: url({{asset('Frontend/img/banner/banner5.png')}}); ">
@@ -473,7 +473,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="col-lg-6">
                                 <div class="tab_destinations_boxed">
@@ -496,7 +495,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="col-lg-6">
                                 <div class="tab_destinations_boxed">
@@ -519,7 +517,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="col-lg-6">
                                 <div class="tab_destinations_boxed">
@@ -542,7 +539,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="col-lg-6">
                                 <div class="tab_destinations_boxed">
@@ -555,6 +551,7 @@
                                         <h3>Annapurna region</h3>
                                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                                     </div>
+
                                     <div class="price-tab text-center">
                                         <div class="price">
                                             <h3>$1539</h3>
@@ -565,7 +562,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -907,7 +903,7 @@
                                 </div>
                             </div>
                             <img src="./assets/img/left-quotes-sign.png" class="left-quote" alt="">
-                            <img src="./assets/img/left-quotes-sign.png" class="right-quote" alt="">
+                           
                         </div>
                     </div>
                     <div class="item">
@@ -933,7 +929,6 @@
                                 </div>
                             </div>
                             <img src="./assets/img/left-quotes-sign.png" class="left-quote" alt="">
-                            <img src="./assets/img/left-quotes-sign.png" class="right-quote" alt="">
                         </div>
                     </div>
                 </div>
@@ -941,3 +936,4 @@
         </div>
     </section>
 @endsection
+

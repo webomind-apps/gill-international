@@ -1,4 +1,4 @@
-@extends('frontend.layout.master')
+@extends('Frontend.layout.master')
 
 @section('title')
     <title>{{ $disney->meta_title }}</title>
@@ -34,9 +34,11 @@
                         </p>
                     </div>
                 </div>
+
                 <div class="col-lg-6 mx-auto col-md-6 col-sm-12">
                     <img src="{{ asset("storage/$disney->image") }}" class="img-fluid" alt="">
                 </div>
+
             </div>
         </div>
     </section>

@@ -27,7 +27,7 @@ class DisneyRequest extends FormRequest
             'title'    =>  'required',
             'banner'  =>  'required',
             'description'  =>  'required',
-            'image'     =>  'required',
+            'image'     =>  'required|image',
             'meta_title'  =>  'required',
             'meta_description' =>  'required',
             'meta_keywords' =>  'required' ,

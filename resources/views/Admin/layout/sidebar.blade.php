@@ -41,10 +41,40 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Vacation</span></a>
     </li>
+    <li class="nav-item {{ request()->segment(1) == 'group-vacation' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('admin.group-vacation.index') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Group Vacation</span></a>
+    </li>
     <li class="nav-item {{ request()->segment(1) == 'disney' ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('admin.disney.index') }}">
             <i class="fas fa-snowflake"></i>
             <span>Disney</span></a>
+    </li>
+    <li class="nav-item {{ request()->segment(1) == 'wedding' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('admin.wedding.index') }}">
+            <i class="fas fa-church"></i>
+            <span>Wedding</span></a>
+    </li>
+    <li class="nav-item {{ request()->segment(1) == 'about-us' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('admin.about-us.index') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>About Us</span></a>
+    </li>
+    <li class="nav-item {{ request()->segment(1) == 'about-us' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('admin.about-us.index') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Footer Content</span></a>
+    </li>
+    <li class="nav-item {{ request()->segment(1) == 'contact-us' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('admin.contact-us.index') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Contact Us Page</span></a>
+    </li>
+    <li class="nav-item {{ request()->segment(1) == 'contact-us-query' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('admin.contact-us-query.index') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Contact Us Queries</span></a>
     </li>
 
     <!-- Divider -->

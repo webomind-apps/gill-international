@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Vacation;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\VacationRequest;
 use App\Models\Vacation;
 use Illuminate\Http\Request;
 
@@ -18,6 +19,7 @@ class VacationController extends Controller
         $content = Vacation::first();
         return view('Admin.Vacation.index', compact('content'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -35,7 +37,7 @@ class VacationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(VacationRequest $request)
     {
         $banner = $request->file('banner')->store('Vacation/banner', 'public');
         $image = $request->file('image')->store('Vacation/image', 'public');
@@ -101,6 +103,7 @@ class VacationController extends Controller
         $content->save();
 
         return redirect()->route('admin.vacation.index');
+
     }
 
     /**

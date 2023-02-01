@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\CruiseShipOption;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Blade;
 
 class CruiseController extends Controller
 {
@@ -25,3 +26,5 @@ class CruiseController extends Controller
     }
 
 }
+
+

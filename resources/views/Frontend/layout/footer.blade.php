@@ -99,7 +99,7 @@
         <div class="row">
             <div class="col-lg-6 d-flex ">
                 <img src="./assets/img/gill-logo.png" class="footer-logo" alt="" srcset="">
-                <p>© {{ date('Y') }} Gill Internation Travel All rights reserved</p>
+                <p>© {{ date('Y') }} Gill International Travel All rights reserved</p>
             </div>
             <div class="col-lg-6 d-flex justify-content-center">
                 <img src="./assets/img/tico-logo-footer.png" height="30px" class="mt-2" alt="">

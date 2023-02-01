@@ -18,6 +18,7 @@ class DisneyController extends Controller
     {
         $content = Disney::first();
         return view('Admin.Disney.index', compact('content'));
+
     }
 
     /**
@@ -96,12 +97,15 @@ class DisneyController extends Controller
             $image = $request->file('image')->store('Disney/image', 'public');
             $content->image = $image;
         }
+
+    
         $content->meta_title = $request->meta_title;
         $content->meta_description = $request->meta_description;
         $content->meta_keywords = $request->meta_keywords;
         $content->save();
 
         return redirect()->route('admin.disney.index');
+
     }
 
     /**
