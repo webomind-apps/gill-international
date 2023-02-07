@@ -46,7 +46,7 @@
                             <a href="{{ route('top_cruise_ports') }}">Top Cruise Ports</a>
                         </li>
                         <li>
-                            <a href="{{ route('cruise_ship_options') }}">cruise ship options</a>
+                            <a href="{{ route('cruise_ship_options') }}">Cruise Ship Options</a>
                         </li>
                     </ul>
                 </li>
@@ -57,7 +57,7 @@
                     <a href="{{ route('vacation') }}">Vacation</a>
                 </li>
                 <li class="underline">
-                    <a href="{{route('group-vacation')}}">Group Travel</a>
+                    <a href="#">Group Travel</a>
                 </li>
                 <li class="underline">
                     <a href="{{ route('disney') }}">Disney</a>
@@ -72,7 +72,7 @@
                 <li class="underline">
                     <a href="{{ route('contact-us-page') }}">Contact Us</a>
                 </li>
-                <li>
+                {{-- <li>
                     <select name="" id="">
                         <option value="">Select Location</option>
                         <option value="">England</option>
@@ -81,7 +81,7 @@
                         <option value="">Spain</option>
 
                     </select>
-                </li>
+                </li> --}}
             </ul>
         </nav>
     </div>

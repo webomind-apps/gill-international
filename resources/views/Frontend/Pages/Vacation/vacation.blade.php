@@ -28,10 +28,10 @@
 
                 <div class="col-lg-6 col-md-6 my-auto col-sm-12">
                     <div class="content px-4">
-                        <h1 class="mb-4">{{ $vacation->title }} </h1>
-                        <p style="font-size: 17px;">
+                        <h1>{{ $vacation->title }} </h1>
+                        {{-- <p style="font-size: 16px;"> --}}
                             {!! $vacation->description !!}
-                        </p>
+                        {{-- </p> --}}
                     </div>
 
                 </div>

@@ -108,7 +108,7 @@
                             <div class="timeline-content">
                                 <div class="circle">
                                     <span class="homebox">
-                                        <img src="{{asset('frontend/img/wedding/wedding-consiltant.jfif')}}" class="img">
+                                        <img src="{{asset('Frontend/img/wedding/wedding-consiltant.jfif')}}" class="img">
                                     </span>
                                 </div>
                                 <div class="content">
@@ -120,7 +120,7 @@
                         </div>
                         <div class="timeline">
                             <div class="timeline-content">
-                                <div class="circle"><span class="homebox"><img src="{{asset('frontend/img/wedding/theme.jfif')}}"
+                                <div class="circle"><span class="homebox"><img src="{{asset('Frontend/img/wedding/theme.jfif')}}"
                                             class="img" /></span></div>
                                 <div class="content">
                                     <span class="year">Step 2</span>
@@ -132,7 +132,7 @@
                         <div class="timeline">
                             <div class="timeline-content">
                                 <div class="circle"><span class="homebox"><img
-                                            src="{{asset('frontend/img/wedding/Pickdestination.jfif')}}" class="img"></span></div>
+                                            src="{{asset('Frontend/img/wedding/Pickdestination.jfif')}}" class="img"></span></div>
                                 <div class="content">
                                     <span class="year">Step 3</span>
                                     <h3 class="title h4"> Pick your Destination, Travel and Hotel </h3>
@@ -142,7 +142,7 @@
                         </div>
                         <div class="timeline">
                             <div class="timeline-content">
-                                <div class="circle"><span class="homebox"><img src="{{asset('frontend/img/wedding/weddingDate.jfif')}}"
+                                <div class="circle"><span class="homebox"><img src="{{asset('Frontend/img/wedding/weddingDate.jfif')}}"
                                             class="img"></span></div>
                                 <div class="content">
                                     <span class="year">Step 4</span>
@@ -155,7 +155,7 @@
                         <div class="timeline">
                             <div class="timeline-content">
                                 <div class="circle"><span class="homebox"><img
-                                            src="{{asset('frontend/img/wedding/Legal-Requirements.png')}}" class="img"></span></div>
+                                            src="{{asset('Frontend/img/wedding/Legal-Requirements.png')}}" class="img"></span></div>
                                 <div class="content">
                                     <span class="year">Step 5</span>
                                     <h3 class="title 4">Get the Destination’s Legal Requirements</h3>
@@ -167,7 +167,7 @@
                         <div class="timeline">
                             <div class="timeline-content">
                                 <div class="circle"><span class="homebox"><img
-                                            src="{{asset('frontend/img/wedding/Reservation.jfif')}}" class="img"></span></div>
+                                            src="{{asset('Frontend/img/wedding/Reservation.jfif')}}" class="img"></span></div>
                                 <div class="content">
                                     <span class="year">Step 6</span>
                                     <h3 class="title h4">Complete your Reservation !</h3>

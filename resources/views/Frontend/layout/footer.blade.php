@@ -31,45 +31,33 @@
                 </div>
                 <div class="footer_link_area">
                     <ul>
-                        <li><a href="#" class="">Home</a></li>
+                        <li><a href="{{ route('index') }}" class="">Home</a></li>
                         <li><a href="#" class="">About Us</a></li>
                         <li><a href="#" class="">Services</a></li>
                         <li><a href="#" class="">Travel</a></li>
-                        <li><a href="#" class="">Cruise</a></li>
-                        <li><a href="#" class="">Vacation</a></li>
+                        <li><a href="{{ route('cruise_vacation') }}" class="">Cruise</a></li>
+                        <li><a href="{{ route('vacation') }}" class="">Vacation</a></li>
                         <li><a href="#" class="">Hotel</a></li>
                         <li><a href="#" class="">Travel Booking</a></li>
-                        <li><a href="#" class="">Contact Us</a></li>
+                        <li><a href="{{ route('contact-us-page') }}" class="">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-2 col-md-4 col-sm-6 col-12">
                 <div class="footer_heading_area">
-                    <h5>Support</h5>
+                    <h5>Inforamtion Links</h5>
                 </div>
                 <div class="footer_link_area">
-                    <ul>
-                        <li><a href="#" class="">Account</a></li>
-                        <li><a href="#" class="">Faq</a></li>
-                        <li><a href="#" class="">Legal</a></li>
-                        <li><a href="#" class="">Contact</a></li>
-                        <li><a href="#" class=""> Affiliate Program</a></li>
-                        <li><a href="#" class="">Privacy Policy</a></li>
+                    <ul class="footer-contact-info" id="information_links">
                     </ul>
                 </div>
             </div>
             <div class="col-lg-2 col-md-4 col-sm-6 col-12">
                 <div class="footer_heading_area">
-                    <h5>Other Services</h5>
+                    <h5>Useful Links</h5>
                 </div>
                 <div class="footer_link_area">
-                    <ul>
-                        <li><a href="#" class="">Community program</a></li>
-                        <li><a href="#" class="">Investor Relations</a></li>
-                        <li><a href="#" class="">Rewards Program</a></li>
-                        <li><a href="#" class="">PointsPLUS</a></li>
-                        <li><a href="#" class="">Partners</a></li>
-                        <li><a href="#" class="">List My Hotel</a></li>
+                    <ul class="footer-contact-info" id="footer_useful_links">
                     </ul>
                 </div>
             </div>

@@ -100,7 +100,7 @@
     <script>
         // function loadTinymce() {
         tinymce.init({
-            selector: '#header_description,#premium_description,#popular_description,#luxury_description,#river_cruises_description,#description,#destination_wedding_description,#destination_wedding_form_description,#destination_wedding_plan_description,#about_description,#gift_registry_description,#easy_registration_description,#buying_process_description,#gift_card_description,#advantage_description,#guest_description',
+            selector: '#section_4_description,#section_3_description,#section_2_description,#section_1_description,#read_more_description,#about_us_description,#header_description,#premium_description,#popular_description,#luxury_description,#river_cruises_description,#description,#destination_wedding_description,#destination_wedding_form_description,#destination_wedding_plan_description,#about_description,#gift_registry_description,#easy_registration_description,#buying_process_description,#gift_card_description,#advantage_description,#guest_description',
             plugins: 'code',
             valid_elements: '*[*]',
         });

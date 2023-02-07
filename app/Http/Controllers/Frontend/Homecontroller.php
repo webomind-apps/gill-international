@@ -4,10 +4,15 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
+use App\Models\AirlineImage;
 use App\Models\CruiseShipOption;
+use App\Models\CruiseVacation;
 use App\Models\Disney;
 use App\Models\Flight;
 use App\Models\GroupVacation;
+use App\Models\Home;
+use App\Models\HomeImage;
+use App\Models\HomeTestimonials;
 use App\Models\Service;
 use App\Models\Vacation;
 use App\Models\Wedding;
@@ -18,12 +23,17 @@ class Homecontroller extends Controller
 {
     public function index()
     {
-        return view('Frontend.Pages.Home.index');
+        $content = Home::first();
+        $home_images = HomeImage::all();
+        $home_airlines = AirlineImage::all();
+        $home_testimonials = HomeTestimonials::all();
+        return view('Frontend.Pages.Home.index', compact('content', 'home_images','home_airlines','home_testimonials'));
     }
 
     public function cruise_vacation()
     {
-        return view('Frontend.Pages.Cruises.cruise_vacation');
+        $cruise_vacation = CruiseVacation::first();
+        return view('Frontend.Pages.Cruises.cruise_vacation', compact('cruise_vacation'));
     }
 
     public function top_cruise_ports()

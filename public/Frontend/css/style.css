@@ -1495,7 +1495,7 @@ p {
 .solution1-section {
     height: auto;
     width: 100%;
-    background-image: url(../img/paralex-image.jpg);
+    /* background-image: url(../img/paralex-image.jpg); */
     background-repeat: no-repeat;
     background-position: center center;
     /* background-attachment: scroll; */
@@ -3163,7 +3163,7 @@ p {
 
 .privacy-policy-page{
     background-color: rgb(245, 245, 245);
-    padding: 10% 0;
+    padding: 5% 0;
 }
 .main-privacy-cont{
     box-shadow: 4px 3px 6px #2a2a2a18;

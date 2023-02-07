@@ -156,6 +156,47 @@
             });
         })
     </script>
+
+    <script>
+        $(function() {
+            $.ajax({
+                type: "GET",
+                url: '{{ route('footer-useful-links') }}',
+                dataType: "json",
+                success: function(answer) {
+                    console.log( 'answer',answer);
+                    for (var i = 0; i < answer.length; i++) {
+                        var route = "{{ url('') }}";
+                        console.log('route', route);
+                        var htm = '<li><a href="' + route + '/useful-links/' + answer[i]['slug'] + '">' +
+                            answer[i]['title'] + '</a><li>';
+                        $('#footer_useful_links').append(htm);
+                    }
+                },
+            });
+            return false;
+        });
+    </script>
+    <script>
+        $(function() {
+            $.ajax({
+                type: "GET",
+                url: '{{ route('footer-information-links') }}',
+                dataType: "json",
+                success: function(answer) {
+                    console.log( 'answer',answer);
+                    for (var i = 0; i < answer.length; i++) {
+                        var route = "{{ url('') }}";
+                        console.log('route', route);
+                        var htm = '<li><a href="' + route + '/information-links/' + answer[i]['slug'] + '">' +
+                            answer[i]['title'] + '</a><li>';
+                        $('#information_links').append(htm);
+                    }
+                },
+            });
+            return false;
+        });
+    </script>
 </body>
 
 </html>

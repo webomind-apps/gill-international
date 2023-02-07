@@ -17,6 +17,21 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('banner');
+            $table->text('section_1_title');
+            $table->text('section_1_image');
+            $table->text('section_1_description');
+            $table->text('section_2_title');
+            $table->text('section_2_image');
+            $table->text('section_2_description');
+            $table->text('section_3_title');
+            $table->text('section_3_image');
+            $table->text('section_3_description');
+            $table->text('section_4_title');
+            $table->text('section_4_image');
+            $table->text('section_4_description');
+            $table->text('meta_title');
+            $table->text('meta_keywords');
+            $table->text('meta_description');
             $table->timestamps();
         });
     }

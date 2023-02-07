@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\CruiseShipOption;
+use App\Models\CruiseVacation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
 
@@ -11,7 +12,8 @@ class CruiseController extends Controller
 {
     public function cruise_vacation()
     {
-        return view('Frontend.Pages.Cruises.cruise_vacation');
+        $cruise_vacation = CruiseVacation::first();
+        return view('Frontend.Pages.Cruises.cruise_vacation', compact('cruise_vacation'));
     }
 
     public function top_cruise_ports()

@@ -28,7 +28,7 @@
                 <div class="col-lg-6 col-md-6 my-auto col-sm-12">
                     <div class="content px-4">
                         <h1 class="mb-4">{{ $disney->title }} </h1>
-                        <p style="font-size: 18px;">
+                        <p style="font-size: 16px;">
                             {!! $disney->description !!}
 
                         </p>

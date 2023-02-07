@@ -1,15 +1,26 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutUs\AboutUsController;
+use App\Http\Controllers\Admin\Admin\AdminController;
 use App\Http\Controllers\Admin\ContactQuery\ContactQueryController;
 use App\Http\Controllers\Admin\ContactUs\ContactUsController;
 use App\Http\Controllers\Admin\Cruise\CruiseShipOptions;
+use App\Http\Controllers\Admin\Cruise\CruiseVacation;
+use App\Http\Controllers\Admin\Cruise\TopCruisePortsController;
+use App\Http\Controllers\Admin\Destination\DestinationController;
 use App\Http\Controllers\Admin\Disney\DisneyController;
 use App\Http\Controllers\Admin\Flight\FlightController;
 use App\Http\Controllers\Admin\GroupVacation\GroupVacationController;
+use App\Http\Controllers\Admin\Home\HomeAirlines;
+use App\Http\Controllers\Admin\Home\HomeController as HomeHomeController;
+use App\Http\Controllers\Admin\Home\HomeImageController;
+use App\Http\Controllers\Admin\Home\HomeTestimonialsController;
+use App\Http\Controllers\Admin\InformationLinks\InformationLinksController;
+use App\Http\Controllers\Admin\UsefulLinks\UsefulLinksController;
 use App\Http\Controllers\Admin\Vacation\VacationController;
 use App\Http\Controllers\Admin\Wedding\WeddingController;
 use App\Http\Controllers\Frontend\ContactUsController as FrontendContactUsController;
+use App\Http\Controllers\Frontend\FooterController;
 use App\Http\Controllers\Frontend\Homecontroller;
 use App\Http\Controllers\ProfileController;
 use App\Models\AboutUs;
@@ -52,6 +63,12 @@ Route::get('/services', [Homecontroller::class, 'services'])->name('services');
 Route::get('/contact-us', [FrontendContactUsController::class, 'contact_us'])->name('contact-us-page');
 Route::post('/contact-us-query', [FrontendContactUsController::class, 'contact_us_query'])->name('contact-us-query');
 
+Route::get('useful-links', [FooterController::class, 'useful_links'])->name('footer-useful-links');
+Route::get('information-links', [FooterController::class, 'information_links'])->name('footer-information-links');
+
+Route::get('/useful-links/{slug}', [FooterController::class, 'useful_link_pages'])->name('useful-links');
+Route::get('/information-links/{slug}', [FooterController::class, 'information_link_pages'])->name('information-links');
+
 Route::get('/dashboard', function () {
     return view('Admin.dashboard.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -72,7 +89,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     Route::group(['middleware' => ['auth']], function () {
         Route::group(['middleware' => ['auth']], function () {
+            Route::resource('company', DestinationController::class);
+            Route::resource('admin', AdminController::class);
+            Route::resource('home', HomeHomeController::class);
+            Route::resource('home-image', HomeImageController::class);
+            Route::resource('home-airlines', HomeAirlines::class);
+            Route::resource('home-testimonials', HomeTestimonialsController::class);
             Route::resource('cruises-ship-options', CruiseShipOptions::class);
+            Route::resource('cruises-vacations', CruiseVacation::class);
+            Route::resource('top-cruise-ports', TopCruisePortsController::class);
             Route::resource('flight', FlightController::class);
             Route::resource('vacation', VacationController::class);
             Route::resource('disney', DisneyController::class);
@@ -81,9 +106,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             Route::resource('about-us', AboutUsController::class);
             Route::resource('contact-us', ContactUsController::class);
             Route::resource('contact-us-query', ContactQueryController::class);
+            Route::resource('useful-links', UsefulLinksController::class);
+            Route::resource('information-links', InformationLinksController::class);
+            Route::resource('destination', DestinationController::class);
+           
+            
         });
     });
-
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

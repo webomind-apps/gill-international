@@ -1,10 +1,21 @@
 @extends('Frontend.layout.master')
 
+
+@section('title')
+    <title>{{ $content->meta_title }}</title>
+@endsection
+@section('meta_description')
+    <meta name="meta_description" content="{{ $content->meta_description }}">
+@endsection
+@section('meta_keywords')
+    <meta name="meta_keywords" content="{{ $content->meta_keywords }}">
+@endsection
+
 @section('page-contents')
-    <section class="main-banner" style="background-image: url({{asset('Frontend/img/banner/banner5.png')}}); ">
+    <section class="main-banner" style="background-image: url({{ asset("storage/$content->banner") }}); ">
         <div class="container">
             <div class="row">
-                <h1 class="banner-title">Explore the world together</h1>
+                <h1 class="banner-title">{{ $content->title }}</h1>
                 <p>Find awesome flights, hotel, tour, car and packages</p>
             </div>
         </div>
@@ -281,19 +292,14 @@
                 </div>
                 <div class="col-lg-5 my-auto">
                     <div class="abt-cont">
-                        <h3>We Are The World Best Travel Agency Company Since 2000</h3>
+                        <h3>{{ $content->about_us_title }}</h3>
                         <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo ea impedit ut doloribus,
-                            praesentium quos, recusandae aut, debitis molestiae culpa totam? Exercitationem blanditiis
-                            sapiente magnam quam in pariatur dolores fuga!
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo ea impedit ut doloribus,
-                            praesentium quos, recusandae aut, debitis molestiae culpa totam? Exercitationem blanditiis
-                            sapiente magnam quam in pariatur dolores fuga!
+                            {!! $content->about_us_description !!}
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-5 text-left abt-img my-auto">
-                    <img src="./assets/img/about-us.png" alt="">
+                    <img src="{{ asset("storage/$content->about_us_image") }}" alt="">
                 </div>
             </div>
         </div>
@@ -303,105 +309,44 @@
     <section id="offer_area" class="ptb">
         <div class="container mt-5">
             <div class="row">
-                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="offer_area_box d-none-phone img_animation"><img src="./assets/img/destination/Flight.jpg"
-                            alt="img">
-                        <div class="offer_area_content">
-                            <h2>Flight</h2>
-                            <p>Invidunt ut labore et dolore magna aliquyam erat, </p>
-                            <a href="#!" class="button-sm text-decoration-none">Get tips</a>
+                @foreach ($home_images as $home_image)
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-12">
+                        <div class="offer_area_box d-none-phone img_animation"><img
+                                src="{{ asset("storage/$home_image->image") }}" alt="img">
+                            <div class="offer_area_content">
+                                <h2>{{ $home_image->title }}</h2>
+                                <p>{!! $home_image->description !!}</p>
+                                <a href="#!" class="button-sm text-decoration-none">Get tips</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                    <div class="offer_area_box img_animation"><img src="./assets/img/destination/accomodation.jpg"
-                            alt="img">
-                        <div class="offer_area_content">
-                            <h2>Accommodation </h2>
-                            <p>Invidunt ut labore et dolore magna aliquyam erat</p>
-                            <a href="#!" class="button-sm text-decoration-none">Get tips</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                    <div class="offer_area_box img_animation"><img src="./assets/img/destination/car.jpg" alt="img">
-                        <div class="offer_area_content">
-                            <h2>Car</h2>
-                            <p>Invidunt ut labore et dolore magna aliquyam erat</p>
-                            <a href="#!" class="button-sm text-decoration-none">Get tips</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 col-12 mt-4">
-                    <div class="offer_area_box img_animation"><img src="./assets/img/destination/Nature-activities.jpg"
-                            alt="img">
-                        <div class="offer_area_content">
-                            <h2>Tour & Activities</h2>
-                            <p>Invidunt ut labore et dolore magna aliquyam erat</p>
-                            <a href="#!" class="button-sm text-decoration-none">Get tips</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 col-12 mt-4">
-                    <div class="offer_area_box img_animation"><img src="./assets/img/destination/destination.jpg"
-                            alt="img">
-                        <div class="offer_area_content">
-                            <h2>Destination</h2>
-                            <p>Invidunt ut labore et dolore magna aliquyam erat</p>
-                            <a href="#!" class="button-sm text-decoration-none">Get tips</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 col-12 mt-4">
-                    <div class="offer_area_box img_animation">
-                        <img src="./assets/img/destination/wedding.jpg" alt="img">
-                        <div class="offer_area_content">
-                            <h2>Wedding</h2>
-                            <p>Invidunt ut labore et dolore magna aliquyam erat</p>
-                            <a href="#!" class="button-sm text-decoration-none">Get tips</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 col-12 mt-4">
-                    <div class="offer_area_box img_animation"><img src="./assets/img/destination/group.jpg"
-                            alt="img">
-                        <div class="offer_area_content">
-                            <h2>Group</h2>
-                            <p>Invidunt ut labore et dolore magna aliquyam erat</p>
-                            <a href="#!" class="button-sm text-decoration-none">Get tips</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
 
 
 
-    <section class="solution1-section">
+    <section class="solution1-section"
+        style="background-image: url({{ asset("storage/$content->read_more_image") }})">
         <div class="container-fluid">
-            <div class="row ">
-                <div class="col-lg-4 col-md-6 px-0 col-sm-12 ms-auto">
-                    <div class="solution-content-right">
-                        <!-- <h4 class="Title wow fadeInUp" data-wow-delay=".6s" data-wow-duration="1.5s">-SOLUTIONS-</h4> -->
-                        <h1 class="wow fadeInUp" data-wow-delay=".7s" data-wow-duration="1.5s">Invidunt ut labore et
-                            dolore</h1>
-                        <p class="wow fadeInUp" data-wow-delay=".8s" data-wow-duration="1.5s">Invidunt ut labore et
-                            dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                            accusam et justo duo dolores et ea rebum.
-                        </p>
-                        <p class="wow fadeInUp" data-wow-delay=".9s" data-wow-duration="1.5s"> Stet clita kasd dolor sit
-                            amet. Lorem ipsum
-                            dolor sit amet. Stet clita kasd dolor sit amet. Lorem ipsum
-                            dolor sit amet.
-                        </p>
-                        <div class="col-md-12 mt-5  wow flipInX" data-wow-delay=".6s" data-wow-duration="1.5s">
-                            <a href="#" class="button2 text-decoration-none">Read more</a>
-                        </div>
-                    </div>
+        <div class="row ">
+            <div class="col-lg-4 col-md-6 px-0 col-sm-12 ms-auto">
+                <div class="solution-content-right">
+                    <!-- <h4 class="Title wow fadeInUp" data-wow-delay=".6s" data-wow-duration="1.5s">-SOLUTIONS-</h4> -->
+                    <h1 class="wow fadeInUp" data-wow-delay=".7s" data-wow-duration="1.5s">
+                        {{ $content->read_more_title }}</h1>
+                    <p class="wow fadeInUp" data-wow-delay=".8s" data-wow-duration="1.5s">
+                        {!! $content->read_more_description !!}
+                    </p>
 
+                    <div class="col-md-12 mt-5  wow flipInX" data-wow-delay=".6s" data-wow-duration="1.5s">
+                        <a href="{{ $content->read_more_link }}" class="button2 text-decoration-none">Read more</a>
+                    </div>
                 </div>
+
             </div>
+        </div>
         </div>
     </section>
 
@@ -722,10 +667,12 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <img src="./assets/img/offer.webp" class="img-fluid rounded" alt="" srcset="">
+                    <img src="{{ asset("storage/$content->special_offer_banner_1") }}" class="img-fluid rounded"
+                        alt="" srcset="">
                 </div>
                 <div class="col-lg-6">
-                    <img src="./assets/img/offer2.jpg" class="img-fluid rounded" alt="" srcset="">
+                    <img src="{{ asset("storage/$content->special_offer_banner_2") }}" class="img-fluid rounded"
+                        alt="" srcset="">
                 </div>
 
             </div>
@@ -741,41 +688,15 @@
                     </div>
                 </div>
                 <div id="airline" class="owl-carousel owl-theme airline mt-4 owl-loaded owl-drag">
-                    <div class="item">
-                        <div class="airline-sec col-lg-9 my-auto mx-auto">
-                            <img src="./assets/img/airline/air-canada.png" class="img-fluid pt-2" alt="">
+                    @foreach ($home_airlines as $home_airline)
+                        <div class="item">
+                            <div class="airline-sec col-lg-9 my-auto mx-auto">
+                                <img src="{{ asset("storage/$home_airline->image") }}" class="img-fluid pt-2"
+                                    alt="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="airline-sec col-lg-9 my-auto mx-auto">
-                            <img src="./assets/img/airline/British-Airways.jpg" class="img-fluid" alt="">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="airline-sec col-lg-9 my-auto mx-auto">
-                            <img src="./assets/img/airline/delta.png" class="img-fluid" alt="">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="airline-sec col-lg-9 my-auto mx-auto">
-                            <img src="./assets/img/airline/luftsana.png" class="img-fluid" alt="">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="airline-sec col-lg-9 my-auto mx-auto">
-                            <img src="./assets/img/airline/malaysia.png" class="img-fluid" alt="">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="airline-sec col-lg-9 my-auto mx-auto">
-                            <img src="./assets/img/airline/southwest.png" class="img-fluid" alt="">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="airline-sec col-lg-9 my-auto mx-auto">
-                            <img src="./assets/img/airline/transivia.png" class="img-fluid" alt="">
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>
@@ -787,17 +708,9 @@
                 <div class="col-lg-12 px-0">
                     <div class="qodef-video-button-holder">
                         <div class="qodef-video-button-image">
-                            <img width="1920" height="450" src="./assets/img/video-bg.jpg"
+                            <img width="1920" height="450" src="{{ asset("storage/$content->new_letter_image") }}"
                                 class="attachment-full size-full" alt="a" decoding="async" loading="lazy">
                         </div>
-                        <!-- <a class="qodef-video-button-play" href="javascript:void()" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
-                                <span class="qodef-video-button-play-inner">
-                                    <span class="qodef-video-button-play-holder" style="color: #ffffff">
-                                        <i class="fas fa-play"></i>
-                                    </span>
-                                </span>
-                            </a> -->
                     </div>
                 </div>
             </div>
@@ -829,6 +742,36 @@
                 </div>
                 <div id="reviews" class="owl-carousel owl-theme reviews owl-loaded owl-drag">
                     <div class="item">
+                        @foreach ($home_testimonials as $home_testimonial)
+                            <div class="review-sec col-lg-11 mx-auto">
+                                <div class="star-sec mb-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>{!! $home_testimonial->description !!}</p>
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="review-img">
+                                            <img src="{{ asset("storage/$home_testimonial->image") }}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h3>{{ $home_testimonial->name }}</h3>
+                                        <p>{{ $home_testimonial->post }}</p>
+                                    </div>
+                                </div>
+                                <img src="{{ asset('Frontend/img/left-quotes-sign.png') }}" class="left-quote"
+                                    alt="">
+                                <img src="{{ asset('Frontend/img/left-quotes-sign.png') }}" class="right-quote"
+                                    alt="">
+                            </div>
+                        @endforeach
+
+                    </div>
+                    {{-- <div class="item">
                         <div class="review-sec col-lg-11 mx-auto">
                             <div class="star-sec mb-3">
                                 <i class="fas fa-star"></i>
@@ -877,33 +820,7 @@
                                 </div>
                             </div>
                             <img src="./assets/img/left-quotes-sign.png" class="left-quote" alt="">
-                            <img src="./assets/img/left-quotes-sign.png" class="right-quote" alt="">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="review-sec col-lg-11 mx-auto">
-                            <div class="star-sec mb-3">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Suspendisse varius enim in
-                                elementum tristique. Duis cursus viverra.</p>
-                            <div class="row">
-                                <div class="col-lg-2">
-                                    <div class="review-img">
-                                        <img src="./assets/img/reviews-2.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <h3>Earida Florida</h3>
-                                    <p>Business developer</p>
-                                </div>
-                            </div>
-                            <img src="./assets/img/left-quotes-sign.png" class="left-quote" alt="">
-                           
+
                         </div>
                     </div>
                     <div class="item">
@@ -930,10 +847,9 @@
                             </div>
                             <img src="./assets/img/left-quotes-sign.png" class="left-quote" alt="">
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
     </section>
 @endsection
-
